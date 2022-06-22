@@ -1,0 +1,181 @@
+$primary-color: #020203;
+$secondary-color: #ff0101;
+$light-gray: #fbfbfb;
+$dark-gray: #74798c;
+
+@import "./layout/navbar";
+@import "./layout/side-nav";
+@import "./layout/header";
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  height: 100%;
+  font-size: 18px;
+}
+
+.main {
+  width: 78%;
+  // height: 780px;
+  height: calc(76% - 68px);
+  margin: 68px 16% 0 16%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  // margin-top: 47px;
+  margin-top: 5vh;
+  // height: 79%;
+  height: 60vh;
+  &__graph {
+    width: 74%;
+    height: 100%;
+    // height: 613;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    // row-gap: 25px;
+    &__main {
+      width: 100%;
+      // height: 320px;
+      height: 31vh;
+      // background-color: #FF0101;
+      .bar-chart {
+        position: relative;
+        height: 100%;
+        width: 100%;
+
+        .chart-title {
+          position: absolute;
+          top: 0;
+          left: 0;
+          margin: 0;
+          font-size: 15px;
+          z-index: 10;
+        }
+
+        // .chart-legend{
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     margin: 0;
+        //     font-size: 15px;
+        // }
+      }
+    }
+
+    &__extra {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+
+      .extra-chart {
+        position: relative;
+        width: 31%;
+        // height: 263px;
+        height: 26vh;
+        // background-color: blue;
+        .chart-title {
+          position: absolute;
+          font-size: 15px;
+          top: 1.7vh;
+          left: 2vw;
+          z-index: 1;
+        }
+
+        .score-message {
+          position: absolute;
+          width: fit-content;
+          text-align: center;
+          top: 45%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 10;
+          span {
+            font-size: 26px;
+            font-weight: 700;
+          }
+        }
+        &--curve {
+          background-color: transparent;
+          .chart-title {
+            left: 34px;
+            top: 29px;
+            color: #ffffff;
+            opacity: 0.3;
+          }
+        }
+      }
+    }
+    // background-color: #FF0101;
+  }
+
+  &__stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // row-gap: 39px;
+    height: 100%;
+
+    &__item {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: calc(124px - (3.125vh * 2));
+      width: calc(258px - (32px * 2));
+      padding: 3.125vh 32px;
+      background-color: $light-gray;
+      // background-color: blue;
+      column-gap: 24px;
+      &__data {
+        &__figure {
+          font-size: 20px;
+          font-weight: bold;
+          margin: 0;
+        }
+        &__label {
+          margin: 0;
+          font-size: 14px;
+          font-weight: 500;
+          color: $dark-gray;
+        }
+      }
+    }
+  }
+}
+
+// @media all and (max-width: 1242px) {
+//   .container__graph__extra {
+//     .extra-chart {
+//       .chart-title {
+//         top: 0;
+//         left: 0;
+//         color: red;
+//       }
+//     }
+//   }
+// }
+
+.icon-wrapper {
+  height: 60px;
+  width: 60px;
+  // background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // opacity: 0.1;
+  &--calory {
+    background-color: rgb(255, 0, 0, 0.1);
+  }
+  &--protein {
+    background-color: #4ab8ff1a;
+  }
+  &--carb {
+    background-color: rgb(249, 206, 35, 0.1);
+  }
+  &--lipid {
+    background-color: #fd51811a;
+  }
+}

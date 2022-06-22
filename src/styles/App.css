@@ -1,0 +1,223 @@
+.nav {
+  height: 55px;
+  width: 95%;
+  background-color: #020203;
+  width: 92%;
+  padding: 18px 6% 18px 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav .logo-wrapper {
+  height: 61px;
+  width: fit-content;
+}
+.nav .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 75%;
+}
+.nav .navbar__item a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 24px;
+  transition: color 300ms;
+}
+.nav .navbar__item a:hover {
+  color: #ff0101;
+}
+
+.vertical-nav {
+  position: absolute;
+  top: 91px;
+  left: 0;
+  height: calc(100vh - 91px - 5.6vh - 25vh);
+  width: 117px;
+  background-color: #020203;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 17vh;
+  padding-top: 25vh;
+  padding-bottom: 5.6vh;
+}
+.vertical-nav .copyright {
+  color: white;
+  transform: rotateZ(-180deg);
+  font-size: 12px;
+  font-weight: 500;
+  width: max-content;
+}
+.vertical-nav .copyright__text {
+  writing-mode: vertical-rl;
+}
+.vertical-nav .activity-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 31vh;
+  gap: 1.9vh;
+}
+.vertical-nav .activity-navbar__item {
+  height: 6.25vh;
+  width: 6.25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background-color: white;
+}
+.vertical-nav .activity-navbar__item:hover {
+  cursor: pointer;
+}
+.vertical-nav .activity-navbar__item .icon-wrapper {
+  width: 3.125vh;
+  height: auto;
+}
+
+.header__title {
+  font-size: 48px;
+  font-weight: 500;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+.header__title .user-name {
+  color: #ff0101;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  height: 100%;
+  font-size: 18px;
+}
+
+.main {
+  width: 78%;
+  height: calc(76% - 68px);
+  margin: 68px 16% 0 16%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5vh;
+  height: 60vh;
+}
+.container__graph {
+  width: 74%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.container__graph__main {
+  width: 100%;
+  height: 31vh;
+}
+.container__graph__main .bar-chart {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.container__graph__main .bar-chart .chart-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  font-size: 15px;
+  z-index: 10;
+}
+.container__graph__extra {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.container__graph__extra .extra-chart {
+  position: relative;
+  width: 31%;
+  height: 26vh;
+}
+.container__graph__extra .extra-chart .chart-title {
+  position: absolute;
+  font-size: 15px;
+  top: 1.7vh;
+  left: 2vw;
+  z-index: 1;
+}
+.container__graph__extra .extra-chart .score-message {
+  position: absolute;
+  width: fit-content;
+  text-align: center;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+.container__graph__extra .extra-chart .score-message span {
+  font-size: 26px;
+  font-weight: 700;
+}
+.container__graph__extra .extra-chart--curve {
+  background-color: transparent;
+}
+.container__graph__extra .extra-chart--curve .chart-title {
+  left: 34px;
+  top: 29px;
+  color: #ffffff;
+  opacity: 0.3;
+}
+.container__stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.container__stats__item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: calc(124px - 6.25vh);
+  width: 194px;
+  padding: 3.125vh 32px;
+  background-color: #fbfbfb;
+  column-gap: 24px;
+}
+.container__stats__item__data__figure {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+.container__stats__item__data__label {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #74798c;
+}
+
+.icon-wrapper {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-wrapper--calory {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+.icon-wrapper--protein {
+  background-color: rgba(74, 184, 255, 0.1019607843);
+}
+.icon-wrapper--carb {
+  background-color: rgba(249, 206, 35, 0.1);
+}
+.icon-wrapper--lipid {
+  background-color: rgba(253, 81, 129, 0.1019607843);
+}
+
+/*# sourceMappingURL=App.css.map */

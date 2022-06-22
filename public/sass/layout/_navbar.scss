@@ -1,0 +1,38 @@
+.nav{
+    height: calc(91px - 36px);
+    width: calc(100% - 5%);
+    background-color: $primary-color;
+    width: calc(100% - 2% - 6%);
+    padding: 18px 6% 18px 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo-wrapper{
+        height: 61px;
+        width: fit-content;
+    }
+
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 75%;
+
+
+
+        &__item{
+
+            a{
+                text-decoration: none;
+                color: white;
+                font-weight: 500;
+                font-size: 24px;
+                transition: color 300ms;
+                &:hover{
+                    color: $secondary-color;
+                }
+            }
+        }
+    }
+
+}
