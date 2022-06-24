@@ -8,6 +8,7 @@ import {
   PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
+import PerformanceFactory from "../Factories/PerformanceFactory";
 
 function ChartRadar(props) {
   const [error, setError] = useState(null);
@@ -24,38 +25,8 @@ function ChartRadar(props) {
       .then(
         (result) => {
           setIsLoaded(true);
-          const sessionData = result.data.data.map((data) => {
-            function getkind(kind) {
-              if (kind === 1) {
-                return "Cardio";
-              }
-              if (kind === 2) {
-                return "Energie";
-              }
-              if (kind === 3) {
-                return "Endurance";
-              }
-              if (kind === 4) {
-                return "Force";
-              }
-              if (kind === 5) {
-                return "Vitesse";
-              }
-              if (kind === 6) {
-                return "Intensité";
-              }
-            }
-
-            return (data = {
-              kind: data.kind,
-              value: data.value,
-              performance: getkind(data.kind),
-            });
-          });
-
-          console.log("ecopdowojaksjfiojejfoiwehfgioehwogf");
-          console.log(sessionData);
-          setActivityData(sessionData);
+          const sessionData = new PerformanceFactory(result.data, "api");
+          setActivityData(sessionData.newData);
         },
         (error) => {
           setIsLoaded(true);
@@ -82,7 +53,7 @@ function ChartRadar(props) {
         >
           <PolarGrid cx={0} />
           <PolarAngleAxis
-            dataKey="performance"
+            dataKey="kind"
             axisLine="blue"
             tick={{ fill: "#FFF", fontSize: "0.8vw" }}
           />

@@ -13,6 +13,7 @@ import {
   ResponsiveContainer,
   ReferenceArea,
 } from "recharts";
+import AverageSessionsFactory from "../Factories/AverageSessionsFactory";
 
 function CurveChart(props) {
   const [error, setError] = useState(null);
@@ -33,43 +34,10 @@ function CurveChart(props) {
         (result) => {
           // console.log(result);
           setIsLoaded(true);
-          // setActivityData(result.data.sessions);
-          const sessionData = result.data.sessions.map((data) => {
-            function getDay(day) {
-              if (day === 1) {
-                return "L";
-              }
-              if (day === 2) {
-                return "M";
-              }
-              if (day === 3) {
-                return "M";
-              }
-              if (day === 4) {
-                return "J";
-              }
-              if (day === 5) {
-                return "V";
-              }
-              if (day === 6) {
-                return "S";
-              }
-              if (day === 7) {
-                return "D";
-              }
-            }
+          const sessions = new AverageSessionsFactory(result.data, "api");
+          setActivityData(sessions.sessions);
 
-            return (data = {
-              day: data.day,
-              sessionLength: data.sessionLength,
-              weekday: getDay(data.day),
-            });
-          });
-
-          // console.log(sessionData);
-          setActivityData(sessionData);
-
-          const sessionLengthArray = result.data.sessions.map(
+          const sessionLengthArray = sessions.sessions.map(
             (data) => data.sessionLength
           );
           setSLArray(sessionLengthArray);
@@ -117,7 +85,6 @@ function CurveChart(props) {
 
   const off = maxValue;
   const bColor = "#FFF";
-  const aColor = "#f7b50b";
 
   return (
     <div className="extra-chart extra-chart--curve">
@@ -126,52 +93,6 @@ function CurveChart(props) {
         <br /> sessions
       </h2>
       <ResponsiveContainer width="100%" height="100%">
-        {/* <AreaChart
-          margin={{ right: 18, left: 18 }}
-          width={500}
-          height={100}
-          data={activityData}
-          style={{
-            background:
-              "linear-gradient(to right, #FF0000, #FF0000 " +
-              off +
-              "% , rgb(211,45,31) " +
-              off +
-              "%, rgb(211,45,31))",
-          }}
-        >
-          <defs>
-            <linearGradient
-              id="gradientAreaStroke"
-              x1="0"
-              y1="0"
-              x2="100%"
-              y2="0"
-            >
-              <stop offset="0%" stopColor={bColor} stopOpacity={0.15} />
-              <stop offset={`${off}%`} stopColor={bColor} stopOpacity={0.5} />
-              <stop offset={`${off}%`} stopColor={bColor} stopOpacity={0.5} />
-              <stop offset="100%" stopColor={bColor} stopOpacity={1} />
-            </linearGradient>
-          </defs>
-
-          <Tooltip content={CustomTooltip} cursor={false} />
-          <XAxis
-            dataKey="weekday"
-            axisLine={false}
-            tickLine={false}
-            tick={{ fill: "#FFF" }}
-          />
-          <Area
-            type="monotone"
-            dataKey="sessionLength"
-            stroke="url(#gradientAreaStroke)"
-            fillOpacity={0}
-            strokeWidth={2}
-          />
-          <ReferenceArea x1={maxValue} x2={7} />
-        </AreaChart> */}
-
         <AreaChart
           margin={{ right: 18, left: 18 }}
           width={500}
@@ -203,7 +124,7 @@ function CurveChart(props) {
 
           <Tooltip content={CustomTooltip} cursor={false} />
           <XAxis
-            dataKey="weekday"
+            dataKey="day"
             axisLine={false}
             tickLine={false}
             tick={{ fill: "#FFF" }}

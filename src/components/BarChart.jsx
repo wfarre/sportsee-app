@@ -12,8 +12,46 @@ import {
   ResponsiveContainer,
   Label,
 } from "recharts";
+import ActivityFactory from "../Factories/ActivityFactory";
 
 function ChartBar(props) {
+  function useFetsch(url, factory) {
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [activityData, setActivityData] = useState([]);
+
+    useEffect(() => {
+      fetch(url)
+        .then((res) => {
+          return res.json();
+        })
+        .then(
+          (result) => {
+            // console.log(result);
+            setIsLoaded(true);
+            // setActivityData(result.data.sessions);
+            const sessions = result.data.sessions.map((session, index = 0) => {
+              return {
+                day: session.day,
+                kilogram: session.kilogram,
+                calories: session.calories,
+                index: index + 1,
+              };
+            });
+
+            setActivityData(sessions);
+            console.log("pouet");
+            console.log(sessions);
+          },
+          (error) => {
+            setIsLoaded(true);
+            setError(error);
+            console.log(error);
+          }
+        );
+    }, [url]);
+  }
+
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [activityData, setActivityData] = useState([]);
@@ -28,21 +66,9 @@ function ChartBar(props) {
       })
       .then(
         (result) => {
-          // console.log(result);
           setIsLoaded(true);
-          // setActivityData(result.data.sessions);
-          const sessions = result.data.sessions.map((session, index = 0) => {
-            return {
-              day: session.day,
-              kilogram: session.kilogram,
-              calories: session.calories,
-              index: index + 1,
-            };
-          });
-
-          setActivityData(sessions);
-          console.log("pouet");
-          console.log(sessions);
+          const sessions = new ActivityFactory(result.data, "api");
+          setActivityData(sessions.sessions);
         },
         (error) => {
           setIsLoaded(true);
