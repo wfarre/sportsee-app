@@ -3,10 +3,10 @@ import { ReactComponent as LipidIcon } from "../assets/icons/lipid-icon.svg";
 import { ReactComponent as ProteinIcon } from "../assets/icons/protein-icon.svg";
 import { ReactComponent as CarbIcon } from "../assets/icons/carb-icon.svg";
 
-import ChartBar from "./BarChart";
-import CurveChart from "./CurveChart";
-import ChartRadar from "./ChartRadar";
-import ChartRoundedBar from "./RoundBarChart";
+import ChartBar from "./Charts/BarChart";
+import CurveChart from "./Charts/CurveChart";
+import ChartRadar from "./Charts/ChartRadar";
+import ChartRoundedBar from "./Charts/RoundBarChart";
 
 function SectionStats(props) {
   return (
@@ -20,7 +20,7 @@ function SectionStats(props) {
             <CurveChart url={props.url} />
             <ChartRadar url={props.url} />
 
-            <ChartRoundedBar />
+            <ChartRoundedBar score={props.score} />
             {/* <div className='extra-chart extra-chart--pomodoro'> */}
 
             {/* </div> */}

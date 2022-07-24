@@ -44,6 +44,23 @@ class AverageSessions {
       };
     });
   }
+
+  get maxDay() {
+    const sessionLengthArray = this._sessions.map((session) => {
+      return session.sessionLength;
+    });
+
+    const maxValue = Math.max(...sessionLengthArray);
+
+    const maxDays = [];
+    this._sessions.map((session) => {
+      if (session.sessionLength === maxValue) {
+        maxDays.push(session.day);
+      }
+    });
+
+    return maxDays[0];
+  }
 }
 
 export default AverageSessions;

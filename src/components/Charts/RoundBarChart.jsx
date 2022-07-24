@@ -20,12 +20,15 @@ function ChartRoundedBar(props) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [activityData, setActivityData] = useState([]);
 
+  console.log("ola");
+  console.log(props.score);
+
   const data = [
     {
-      score: 0.12,
+      score: props.score,
       fill: "red",
     },
-    { score: 1, fill: "transparent" },
+    { score: 1, fill: "white" },
   ];
 
   const style = {
@@ -42,6 +45,7 @@ function ChartRoundedBar(props) {
         <span>{data[0].score * 100}%</span> <br /> de votre
         <br /> objectif
       </p>
+
       <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart
           cx="50%"

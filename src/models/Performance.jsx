@@ -21,7 +21,7 @@ class Performance {
     return this._data.value;
   }
 
-  get newData() {
+  get activityData() {
     return this._data.map((item) => {
       return {
         value: item.value,
