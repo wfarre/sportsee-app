@@ -68,3 +68,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### regarding the backend API
+
+The backend API can be found in the git repository below:
+[https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard.git]
+
+Launching the API:
+
+- Fork the repository
+- Clone it on your computer.
+- The yarn command will allow you to install the dependencies.
+- The yarn dev command will allow you to run the micro API.
+
+For more information, please check the git repository README file.
