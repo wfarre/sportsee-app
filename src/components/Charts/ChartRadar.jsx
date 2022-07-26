@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import React, { PureComponent } from "react";
+import { useState } from "react";
+import React from "react";
 import {
   Radar,
   RadarChart,
@@ -14,45 +14,14 @@ import { useFetch } from "../../utils/hooks.jsx";
 import Loader from "./Loader";
 
 function ChartRadar(props) {
-  // const [error, setError] = useState(null);
-  // const [isLoaded, setIsLoaded] = useState(false);
-  // const [activityData, setActivityData] = useState([]);
-
-  const [state, setState] = useState({});
-
   const activityUrl = props.url + "/performance";
 
-  // setState(useFetch(activityUrl, PerformanceFactory, "api"));
-  console.log(state);
+  // fetch the data from the API
   let [data, isLoaded, error] = useFetch(
     activityUrl,
     PerformanceFactory,
     "api"
   );
-
-  // console.log(activityData);
-  console.log("vifoeifoewiof");
-  console.log(data);
-  // useEffect(() => {
-  //   fetch(activityUrl)
-  //     .then((res) => {
-  //       return res.json();
-  //     })
-  //     .then(
-  //       (result) => {
-  //         setIsLoaded(true);
-  //         const sessionData = new PerformanceFactory(result.data, "api");
-  //         setActivityData(sessionData.newData);
-  //       },
-  //       (error) => {
-  //         setIsLoaded(true);
-  //         setError(error);
-  //         console.log(error);
-  //       }
-  //     );
-  // }, [activityUrl]);
-
-  // console.log(activityData);
 
   return (
     <div className="extra-chart extra-chart--radar">
@@ -75,6 +44,7 @@ function ChartRadar(props) {
               axisLine="blue"
               tick={{ fill: "#FFF", fontSize: "0.8vw" }}
             />
+            {/* make disapear the oblic strokes from the graph */}
             <PolarRadiusAxis tick={false} axisLine={false} />
             <Radar
               name="Mike"

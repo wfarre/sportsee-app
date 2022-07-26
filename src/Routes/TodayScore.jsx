@@ -9,10 +9,8 @@ function TodayScore() {
 
   const [userData, isLoaded, error] = useFetch(url, UserFactory, "user");
 
-  console.log(JSON.stringify(userData));
-
   return (
-    <div className="key-data">
+    <div className="data data--score">
       <div>{JSON.stringify(userData.todayScore)}</div>
     </div>
   );

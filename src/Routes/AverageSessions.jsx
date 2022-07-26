@@ -10,8 +10,6 @@ function AverageSessions() {
 
   const [data, isLoaded, error] = useFetch(url, AverageSessionsFactory, "api");
 
-  console.log(data);
-
   return (
     <div className="data data--activity">
       <div>{JSON.stringify(data._sessions)}</div>

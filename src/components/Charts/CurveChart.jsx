@@ -18,51 +18,18 @@ import Loader from "./Loader";
 import { useFetch } from "../../utils/hooks";
 
 function CurveChart(props) {
-  // const [error, setError] = useState(null);
-  // const [isLoaded, setIsLoaded] = useState(false);
-  const [activityData, setActivityData] = useState([]);
-  const [maxValue, setMaxValue] = useState(0);
-  const [sLArray, setSLArray] = useState([]);
-
   const activityUrl = props.url + "/average-sessions";
-  console.log(activityUrl);
 
+  //fetch the data from the API
   let [data, isLoaded, error] = useFetch(
     activityUrl,
     AverageSessionsFactory,
     "api"
   );
 
-  console.log("yeeeeehaaa");
-
-  console.log(data.maxDay);
-
-  // useEffect(() => {
-  //   fetch(activityUrl)
-  //     .then((res) => {
-  //       return res.json();
-  //     })
-  //     .then(
-  //       (result) => {
-  //         // console.log(result);
-  //         setIsLoaded(true);
-  //         const sessions = new AverageSessionsFactory(result.data, "api");
-  //         setActivityData(sessions.sessions);
-
-  //         const sessionLengthArray = sessions.sessions.map(
-  //           (data) => data.sessionLength
-  //         );
-  //         setSLArray(sessionLengthArray);
-  //         setMaxValue(Math.max(...sessionLengthArray));
-  //       },
-  //       (error) => {
-  //         setIsLoaded(true);
-  //         setError(error);
-  //         console.log(error);
-  //       }
-  //     );
-  // }, [activityUrl]);
-
+  /**
+   * This function is made to custom the tooltip inside the chart
+   */
   function CustomTooltip({ payload, label, active }) {
     if (active) {
       return (
@@ -95,6 +62,7 @@ function CurveChart(props) {
     return null;
   }
 
+  //we set the day with the highest activity
   const off = Math.floor((data.maxDay / 7) * 100);
   const bColor = "#FFF";
 

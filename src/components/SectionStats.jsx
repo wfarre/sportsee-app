@@ -21,9 +21,6 @@ function SectionStats(props) {
             <ChartRadar url={props.url} />
 
             <ChartRoundedBar score={props.score} />
-            {/* <div className='extra-chart extra-chart--pomodoro'> */}
-
-            {/* </div> */}
           </div>
         </div>
 

@@ -1,28 +1,9 @@
-import { useEffect, useState } from "react";
-import React, { PureComponent } from "react";
-import {
-  BarChart,
-  Bar,
-  Cell,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-  Label,
-  RadialBarChart,
-  RadialBar,
-} from "recharts";
+import { useState } from "react";
+import React from "react";
+import { ResponsiveContainer, RadialBarChart, RadialBar } from "recharts";
 
 function ChartRoundedBar(props) {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [activityData, setActivityData] = useState([]);
-
-  console.log("ola");
-  console.log(props.score);
-
+  //we use the data from the main fetch in the App.js by passing props
   const data = [
     {
       score: props.score,

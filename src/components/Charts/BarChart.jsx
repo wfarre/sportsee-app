@@ -1,16 +1,13 @@
-import { useEffect, useState } from "react";
-import React, { PureComponent } from "react";
+import React from "react";
 import {
   BarChart,
   Bar,
-  Cell,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   Legend,
   ResponsiveContainer,
-  Label,
 } from "recharts";
 import ActivityFactory from "../../Factories/ActivityFactory";
 import { useFetch } from "../../utils/hooks";
@@ -19,14 +16,16 @@ import Loader from "./Loader";
 function ChartBar(props) {
   const activityUrl = props.url + "/activity";
 
+  // fetch the data for the daily activities
   const [activityData, isLoaded, error] = useFetch(
     activityUrl,
     ActivityFactory,
     "api"
   );
 
-  console.log(activityData);
-
+  /**
+   * This function is made to custom the tooltip inside the chart
+   */
   function CustomTooltip({ payload, label, active }) {
     if (active) {
       return (
@@ -67,7 +66,6 @@ function ChartBar(props) {
         </div>
       );
     }
-
     return null;
   }
 
@@ -77,6 +75,7 @@ function ChartBar(props) {
       {!isLoaded ? (
         <Loader />
       ) : (
+        //container for the chart
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             width={100}

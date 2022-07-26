@@ -9,8 +9,6 @@ function Activities() {
 
   const [data, isLoaded, error] = useFetch(url, PerformanceFactory, "api");
 
-  console.log(data);
-
   return (
     <div className="data data--performance">
       <div>{JSON.stringify(data.activityData)}</div>

@@ -6,8 +6,6 @@ import Activity from "./Routes/Activity";
 import AverageSessions from "./Routes/AverageSessions";
 import Activities from "./Routes/Activities";
 import TodayScore from "./Routes/TodayScore";
-// import Activity from "./models/Activity";
-// import AverageSessions from "./models/AverageSessions";
 import KeyData from "./Routes/KeyData";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

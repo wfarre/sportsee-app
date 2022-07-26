@@ -1,5 +1,15 @@
 import { useEffect, useState } from "react";
 
+/**
+ *
+ * @Params url: where is stored the data in the server
+ * @Params Factory: a factory patterns to be able to use constructor patterns,
+ *  to get the data so they are ready to use
+ * @Params type: corresponds to the type of the api (in case, the backend's API change in the future)
+ * @return the desired activity data
+ * @return isLoaded, to see if the fetch() has finished to load the data
+ * @return error: if there is any
+ */
 export function useFetch(url, Factory, type) {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -24,9 +34,5 @@ export function useFetch(url, Factory, type) {
       );
   }, [url]);
 
-  console.log("poui");
-  console.log({ activityData, isLoaded, error });
-
-  // return { activityData, isLoaded, error };
   return [activityData, isLoaded, error];
 }

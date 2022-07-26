@@ -9,8 +9,6 @@ function Activity() {
 
   const [data, isLoaded, error] = useFetch(url, ActivityFactory, "api");
 
-  console.log(data);
-
   return (
     <div className="data data--activity">
       <div>{JSON.stringify(data._sessions)}</div>
