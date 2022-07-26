@@ -1,4 +1,3 @@
-import { useState } from "react";
 import React from "react";
 import {
   Radar,
@@ -49,9 +48,6 @@ function ChartRadar(props) {
             <Radar
               name="Mike"
               dataKey="value"
-              // label={false}
-              // stroke="transparent"
-
               fill="#FF0101"
               fillOpacity={0.6}
             />

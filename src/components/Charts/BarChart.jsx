@@ -82,7 +82,6 @@ function ChartBar(props) {
             height={300}
             data={activityData.sessions}
             style={{ background: "#FBFBFB" }}
-            // background="#020203"
             margin={{
               top: 50,
               right: 0,

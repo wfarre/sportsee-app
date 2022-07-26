@@ -1,21 +1,18 @@
-import { useEffect, useState } from "react";
-import React, { PureComponent } from "react";
+import React from "react";
 import {
   AreaChart,
   Area,
-  LineChart,
-  Line,
   XAxis,
-  YAxis,
-  CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
   ReferenceArea,
 } from "recharts";
-import AverageSessionsFactory from "../../Factories/AverageSessionsFactory";
-import Loader from "./Loader";
 import { useFetch } from "../../utils/hooks";
+
+// import loader component
+import Loader from "./Loader";
+
+import AverageSessionsFactory from "../../Factories/AverageSessionsFactory";
 
 function CurveChart(props) {
   const activityUrl = props.url + "/average-sessions";
@@ -81,17 +78,14 @@ function CurveChart(props) {
             width={500}
             height={100}
             data={data.sessions}
-            style={
-              // { background: "red" }
-              {
-                background:
-                  "linear-gradient(to right, #FF0000, #FF0000 " +
-                  off +
-                  "% , rgb(211,45,31) " +
-                  off +
-                  "%, rgb(211,45,31))",
-              }
-            }
+            style={{
+              background:
+                "linear-gradient(to right, #FF0000, #FF0000 " +
+                off +
+                "% , rgb(211,45,31) " +
+                off +
+                "%, rgb(211,45,31))",
+            }}
           >
             <defs>
               <linearGradient

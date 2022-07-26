@@ -1,13 +1,15 @@
 import "./styles/App.css";
+
+import { useParams } from "react-router";
+import { useFetch } from "./utils/hooks";
+
+// import my component
 import Navbar from "./components/Navbar";
 import SideNav from "./components/SideNav";
 import Header from "./components/Header";
 import SectionStats from "./components/SectionStats";
-import { useEffect, useId, useState } from "react";
-import { useParams } from "react-router";
 
 import UserFactory from "./Factories/UserFactory";
-import { useFetch } from "./utils/hooks";
 
 function App() {
   const { id } = useParams();
@@ -23,10 +25,11 @@ function App() {
   } else {
     return (
       <div className="App">
-        <Navbar></Navbar>
+        <Navbar />
 
         <main className="main">
           <Header userName={userData.userInfos.firstName} />
+
           <SectionStats
             url={url}
             calory={userData.keyData.calorieCount}
@@ -37,7 +40,7 @@ function App() {
           />
         </main>
 
-        <SideNav></SideNav>
+        <SideNav />
       </div>
     );
   }

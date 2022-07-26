@@ -1,4 +1,3 @@
-import { useState } from "react";
 import React from "react";
 import { ResponsiveContainer, RadialBarChart, RadialBar } from "recharts";
 
@@ -11,13 +10,6 @@ function ChartRoundedBar(props) {
     },
     { score: 1, fill: "white" },
   ];
-
-  const style = {
-    top: "50%",
-    right: 0,
-    transform: "translate(0, -50%)",
-    lineHeight: "24px",
-  };
 
   return (
     <div className=" extra-chart">
