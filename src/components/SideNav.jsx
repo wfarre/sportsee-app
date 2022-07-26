@@ -13,25 +13,25 @@ function SideNav() {
       <div className="activity-navbar">
         <div className="activity-navbar__item">
           <div className="icon-wrapper">
-            <IconYoga className="vertical-nav-icon" />
+            <IconYoga className="vertical-nav-icon vertical-nav-icon--yoga" />
           </div>
         </div>
 
         <div className="activity-navbar__item">
           <div className="icon-wrapper">
-            <IconSwim className="vertical-nav-icon" />
+            <IconSwim className="vertical-nav-icon vertical-nav-icon--move" />
           </div>
         </div>
 
         <div className="activity-navbar__item">
           <div className="icon-wrapper">
-            <IconCycle className="vertical-nav-icon" />
+            <IconCycle className="vertical-nav-icon vertical-nav-icon--move" />
           </div>
         </div>
 
         <div className="activity-navbar__item">
           <div className="icon-wrapper">
-            <IconDumbell className="vertical-nav-icon" />
+            <IconDumbell className="vertical-nav-icon vertical-nav-icon--strength" />
           </div>
         </div>
       </div>

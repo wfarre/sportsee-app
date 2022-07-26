@@ -98,6 +98,57 @@
     transform: rotate(360deg);
   }
 }
+@keyframes cycling {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translate(150%);
+  }
+}
+@keyframes yogi {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-1%, -10%);
+  }
+  20% {
+    transform: translate(-2%, -20%);
+  }
+  30% {
+    transform: translate(-1%, -30%);
+  }
+  40% {
+    transform: translate(0%, -40%);
+  }
+  50% {
+    transform: translate(1%, -50%);
+  }
+  60% {
+    transform: translate(2%, -60%);
+  }
+  70% {
+    transform: translate(1%, -70%);
+  }
+  80% {
+    transform: translate(0%, -80%);
+  }
+  90% {
+    transform: translate(-1%, -90%);
+  }
+  100% {
+    transform: translate(-2%, -100%);
+  }
+}
+@keyframes dumbell-zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
 .loader-bg {
   position: relative;
   height: 100%;
@@ -292,6 +343,19 @@ body {
 .key-data div {
   height: 100%;
   width: 100%;
+}
+
+.activity-navbar__item {
+  overflow: hidden;
+}
+.activity-navbar__item:hover .vertical-nav-icon--move {
+  animation: cycling 2s ease-in-out infinite;
+}
+.activity-navbar__item:hover .vertical-nav-icon--yoga {
+  animation: yogi 1.5s ease-in-out infinite alternate;
+}
+.activity-navbar__item:hover .vertical-nav-icon--strength {
+  animation: dumbell-zoom 1s ease-in-out infinite alternate;
 }
 
 /*# sourceMappingURL=App.css.map */

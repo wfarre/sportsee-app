@@ -109,8 +109,19 @@ body {
   }
 }
 
-// .vertical-nav-icon {
-//   &:hover {
-//     fill: red;
-//   }
-// }
+.activity-navbar__item {
+  overflow: hidden;
+  &:hover {
+    .vertical-nav-icon {
+      &--move {
+        animation: cycling 2s ease-in-out infinite;
+      }
+      &--yoga {
+        animation: yogi 1.5s ease-in-out infinite alternate;
+      }
+      &--strength {
+        animation: dumbell-zoom 1s ease-in-out infinite alternate;
+      }
+    }
+  }
+}
