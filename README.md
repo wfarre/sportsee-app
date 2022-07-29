@@ -1,6 +1,6 @@
 # Sportsee - Dashboard
 
-This is a new page for the application. The goal of this page is to allow the user to check the number of sessions and the amount of burnt calories.
+This is a new page for the application of the company Sportsee. The goal of this page is to allow the user to check the number of sessions and the amount of burnt calories.
 
 ## Install your environment
 
