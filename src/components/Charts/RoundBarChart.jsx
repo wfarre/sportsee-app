@@ -31,7 +31,12 @@ function ChartRoundedBar(props) {
           endAngle={450}
           style={{ background: "#FBFBFB" }}
         >
-          <RadialBar background clockWise dataKey="score" cornerRadius={20} />
+          <RadialBar
+            background={{ fill: "#FBFBFB" }}
+            clockWise
+            dataKey="score"
+            cornerRadius={20}
+          />
         </RadialBarChart>
       </ResponsiveContainer>
     </div>

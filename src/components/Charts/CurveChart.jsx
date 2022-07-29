@@ -107,7 +107,12 @@ function CurveChart(props) {
               dataKey="day"
               axisLine={false}
               tickLine={false}
-              tick={{ fill: "#FFF" }}
+              tick={{
+                fill: "#FFF",
+                fontFamily: "Roboto",
+                fontSize: "12px",
+                opacity: "0.6",
+              }}
             />
             <Area
               type="natural"

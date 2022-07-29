@@ -1,3 +1,68 @@
+# Sportsee - Dashboard
+
+This is a new page for the application. The goal of this page is to allow the user to check the number of sessions and the amount of burnt calories.
+
+## Install your environment
+
+### Install the backend
+
+First, you need to install the backend API. Please find the link below:
+[https://github.com/wfarre/P9-front-end-dashboard.git]
+
+Launching the API:
+
+- Fork the repository
+- Clone it on your computer.
+- The yarn command or npm command will allow you to install the dependencies.
+
+```bash
+npm i
+```
+
+```bash
+yarn install
+```
+
+- The yarn dev command will allow you to run the micro API.
+
+```
+yarn dev
+```
+
+The API will run on http://localhost:5000 .
+
+For more information, please check the git repository of the API.
+
+### Set up the frontend environment
+
+Go to the link below:
+[https://github.com/wfarre/sportsee-app.git]
+(However, if you are reading those lines, it means that you are technically already here...)
+
+- Fork the repository
+- Clone it on your computer
+- Install all the dependencies with npm
+
+```bash
+npm i
+```
+
+- Lauch the app with npm start
+
+```bash
+npm start
+```
+
+- Open [http://localhost:3000] on your browser, then add the desired route to it:
+  "/user/:id" (eg:http://localhost:3000/user/12)
+  As a developper, you might want to check extra datas:
+
+* "/user/:id/activity"
+* "/user/:id/activities"
+* "/user/:id/average-sessions"
+* "/user/:id/today-score"
+* "/user/:id/key-data"
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

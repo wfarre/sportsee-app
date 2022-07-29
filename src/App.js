@@ -13,7 +13,7 @@ import UserFactory from "./Factories/UserFactory";
 
 function App() {
   const { id } = useParams();
-  const userId = { id }.id.slice(1, { id }.id.length);
+  const userId = { id }.id;
   const url = "http://localhost:5000/user/" + userId;
 
   const [userData, isLoaded, error] = useFetch(url, UserFactory, "user");

@@ -1,12 +1,16 @@
-.header{
-    &__title{
-        font-size: 48px;
-        font-weight: 500;
-        margin: 0;
-        margin-bottom: 1rem;
-        .user-name{
-            color: $secondary-color;
-            margin: 0;
-        }
+.header {
+  &__title {
+    font-size: 48px;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 1rem;
+    .user-name {
+      color: $secondary-color;
+      margin: 0;
     }
+  }
+  &__text {
+    font-weight: 400;
+    font-size: 18px;
+  }
 }

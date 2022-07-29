@@ -13,7 +13,7 @@ $dark-gray: #74798c;
 
 body {
   margin: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
   height: 100%;
   font-size: 18px;
 }
@@ -24,25 +24,13 @@ body {
   margin: 68px 16% 0 16%;
 }
 
-// @media all and (max-width: 1242px) {
-//   .container__graph__extra {
-//     .extra-chart {
-//       .chart-title {
-//         top: 0;
-//         left: 0;
-//         color: red;
-//       }
-//     }
-//   }
-// }
-
 .icon-wrapper {
   height: 60px;
   width: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  // opacity: 0.1;
+  border-radius: 6px;
   &--calory {
     background-color: rgb(255, 0, 0, 0.1);
   }
@@ -54,58 +42,6 @@ body {
   }
   &--lipid {
     background-color: #fd51811a;
-  }
-}
-
-.tab {
-  display: grid;
-  width: 500px;
-  grid-template-columns: 50% 50%;
-  grid-template-areas:
-    "header header"
-    "content content";
-
-  &__header {
-    grid-area: header;
-    color: white;
-    background-color: #020203;
-    text-align: center;
-    border-radius: 15px 15px 0 0;
-  }
-  &__content {
-    width: 500px;
-
-    .row {
-      width: 100%;
-      grid-area: content;
-      display: grid;
-      grid-template-columns: 50% 50%;
-      grid-template-areas: "col1 col2";
-
-      .col1 {
-        grid-area: col1;
-        padding: 20px 10px;
-        border: 1px solid black;
-      }
-      .col2 {
-        grid-area: col2;
-        padding: 20px 10px;
-        border: 1px solid black;
-      }
-    }
-  }
-}
-
-.key-data {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-  color: #020203;
-  div {
-    height: 100%;
-    width: 100%;
   }
 }
 
