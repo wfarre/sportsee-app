@@ -20,7 +20,7 @@ npm i
 ```
 
 ```bash
-yarn install
+yarn
 ```
 
 - The yarn dev command will allow you to run the micro API.
