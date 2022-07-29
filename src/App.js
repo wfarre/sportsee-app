@@ -11,6 +11,8 @@ import SectionStats from "./components/SectionStats";
 
 import UserFactory from "./Factories/UserFactory";
 
+import formateNumber from "./utils/formateDate";
+
 function App() {
   const { id } = useParams();
   const userId = { id }.id;
@@ -32,7 +34,7 @@ function App() {
 
           <SectionStats
             url={url}
-            calory={userData.keyData.calorieCount}
+            calory={formateNumber(userData.keyData.calorieCount)}
             protein={userData.keyData.proteinCount}
             lipid={userData.keyData.lipidCount}
             carb={userData.keyData.carbohydrateCount}

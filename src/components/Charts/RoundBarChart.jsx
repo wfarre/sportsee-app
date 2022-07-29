@@ -6,7 +6,7 @@ function ChartRoundedBar(props) {
   const data = [
     {
       score: props.score,
-      fill: "red",
+      fill: "#FF0000",
     },
     { score: 1, fill: "white" },
   ];

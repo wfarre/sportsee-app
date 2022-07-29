@@ -32,7 +32,7 @@ function ChartBar(props) {
         <div
           className="custom-tooltip"
           style={{
-            backgroundColor: "red",
+            backgroundColor: "#E60000",
             width: "39px",
             height: "63px",
             display: "flex",
@@ -98,7 +98,7 @@ function ChartBar(props) {
               dataKey="index"
               interval={0}
               stroke="#DEDEDE"
-              tick={{ fill: "black" }}
+              tick={{ fill: "#9B9EAC", fontSize: "14px" }}
             />
             <YAxis
               yAxisId="left"
@@ -112,6 +112,7 @@ function ChartBar(props) {
               type="number"
               domain={["dataMin - 1", "dataMax"]}
               axisLine={false}
+              tick={{ fill: "#9B9EAC", fontSize: "14px" }}
             />
             <Tooltip content={<CustomTooltip />} />
             <Legend
