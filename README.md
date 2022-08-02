@@ -2,6 +2,16 @@
 
 This is a new page for the application of the company Sportsee. The goal of this page is to allow the user to check the number of sessions and the amount of burnt calories.
 
+## Prerequistes
+
+node v14.16.0
+
+The technologies used are :
+
+- React
+- Sass
+- Recharts for the graphics
+
 ## Install your environment
 
 ### Install the backend
@@ -65,7 +75,3 @@ As a developper, you might want to check extra datas:
 - "/user/:id/average-sessions": if the developper wants to see the user's average length of the sessions.
 - "/user/:id/today-score" : if the developper wants to see the user's completion of the day.
 - "/user/:id/key-data": if the developper wants to see the information about the calories, the proteins, the lipids and the carbohydrates.
-
-## Licence
-
-Sportsee

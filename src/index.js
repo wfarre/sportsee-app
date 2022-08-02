@@ -10,7 +10,6 @@ import KeyData from "./Routes/KeyData";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  // <App />
   <BrowserRouter>
     <Routes>
       <Route path="/user/:id" element={<App />} />

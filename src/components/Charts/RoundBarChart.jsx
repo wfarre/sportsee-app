@@ -1,5 +1,6 @@
 import React from "react";
 import { ResponsiveContainer, RadialBarChart, RadialBar } from "recharts";
+import PropTypes from "prop-types";
 
 function ChartRoundedBar(props) {
   //we use the data from the main fetch in the App.js by passing props
@@ -32,7 +33,7 @@ function ChartRoundedBar(props) {
           style={{ background: "#FBFBFB" }}
         >
           <RadialBar
-            background={{ fill: "#FBFBFB" }}
+            background={{ fill: "#FFFFFF" }}
             clockWise
             dataKey="score"
             cornerRadius={20}
@@ -42,5 +43,9 @@ function ChartRoundedBar(props) {
     </div>
   );
 }
+
+ChartRoundedBar.propTypes = {
+  score: PropTypes.number,
+};
 
 export default ChartRoundedBar;

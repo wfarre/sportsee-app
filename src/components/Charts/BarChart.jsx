@@ -69,6 +69,13 @@ function ChartBar(props) {
     return null;
   }
 
+  // change the color in the text of the legend
+  const renderColorfulLegendText = (value) => {
+    // const { color } = entry;
+
+    return <span style={{ color: "#74798c" }}>{value}</span>;
+  };
+
   return (
     <div className=" extra-chart bar-chart">
       <h2 className="chart-title">Activité quotidienne</h2>
@@ -85,7 +92,7 @@ function ChartBar(props) {
             margin={{
               top: 50,
               right: 0,
-              left: -20,
+              left: 32,
               bottom: 5,
             }}
           >
@@ -96,15 +103,18 @@ function ChartBar(props) {
 
             <XAxis
               dataKey="index"
+              // type="number"
               interval={0}
               stroke="#DEDEDE"
               tick={{ fill: "#9B9EAC", fontSize: "14px" }}
+              domain={["dataMin + 1", "auto"]}
             />
             <YAxis
               yAxisId="left"
               orientation="left"
               stroke="#82ca9d"
               hide="true"
+              // domain={["dataMin - 1", "dataMax"]}
             />
             <YAxis
               yAxisId="right"
@@ -124,10 +134,12 @@ function ChartBar(props) {
               fontSize="14px"
               wrapperStyle={{
                 position: "absolute",
-                top: "0",
+                top: "24px",
+                right: "26px",
                 fontSize: "14px",
-                color: "blue",
+                fontWeight: "500",
               }}
+              formatter={renderColorfulLegendText}
             />
             <Bar
               yAxisId="right"
@@ -135,7 +147,7 @@ function ChartBar(props) {
               barSize={7}
               fill="#020203"
               radius={[3, 3, 0, 0]}
-              name="Poids (Kg)"
+              name="Poids (kg)"
             />
             <Bar
               yAxisId="left"
@@ -143,7 +155,7 @@ function ChartBar(props) {
               barSize={7}
               fill="#FF0101"
               radius={[3, 3, 0, 0]}
-              name="Calories brûlées (Kcal)"
+              name="Calories brûlées (kCal)"
             />
           </BarChart>
         </ResponsiveContainer>

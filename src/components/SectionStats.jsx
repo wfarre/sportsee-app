@@ -2,6 +2,7 @@ import { ReactComponent as CaloryIcon } from "../assets/icons/calory-icon.svg";
 import { ReactComponent as LipidIcon } from "../assets/icons/lipid-icon.svg";
 import { ReactComponent as ProteinIcon } from "../assets/icons/protein-icon.svg";
 import { ReactComponent as CarbIcon } from "../assets/icons/carb-icon.svg";
+import PropTypes from "prop-types";
 
 import ChartBar from "./Charts/BarChart";
 import CurveChart from "./Charts/CurveChart";
@@ -77,5 +78,12 @@ function SectionStats(props) {
     </section>
   );
 }
+
+SectionStats.propTypes = {
+  lipid: PropTypes.number,
+  protein: PropTypes.number,
+  carbohydrate: PropTypes.number,
+  calory: PropTypes.string,
+};
 
 export default SectionStats;

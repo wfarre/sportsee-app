@@ -32,7 +32,7 @@ export function useFetch(url, Factory, type) {
           console.log(error);
         }
       );
-  }, [url]);
+  }, [url, Factory, type]);
 
   return [activityData, isLoaded, error];
 }

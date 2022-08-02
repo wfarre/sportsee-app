@@ -40,6 +40,7 @@ function CurveChart(props) {
             flexDirection: "column",
             justifyContent: "space-around",
             alignItems: "center",
+            // boxShadow: "20px 20px white",
           }}
         >
           <p
@@ -57,6 +58,23 @@ function CurveChart(props) {
       );
     }
     return null;
+  }
+
+  function customActiveDot(cx, cy, value) {
+    return (
+      <circle
+        // cx={160}
+        // cy={50}
+        r={25}
+        stroke="black"
+        strokeWidth={3}
+        fill="white"
+      />
+      // <div
+      //   className="dot"
+      //   style={{ height: "20px", width: "20px", backgroundColor: "blue" }}
+      // ></div>
+    );
   }
 
   //we set the day with the highest activity
@@ -79,12 +97,13 @@ function CurveChart(props) {
             height={100}
             data={data.sessions}
             style={{
-              background:
-                "linear-gradient(to right, #FF0000, #FF0000 " +
-                off +
-                "% , rgb(211,45,31) " +
-                off +
-                "%, rgb(211,45,31))",
+              background: "#FF0000",
+              // background:
+              //   "linear-gradient(to right, #FF0000, #FF0000 " +
+              //   off +
+              //   "% , rgb(211,45,31) " +
+              //   off +
+              //   "%, rgb(211,45,31))",
             }}
           >
             <defs>
@@ -102,7 +121,33 @@ function CurveChart(props) {
               </linearGradient>
             </defs>
 
-            <Tooltip content={CustomTooltip} cursor={false} />
+            <Tooltip
+              content={CustomTooltip}
+              // allowEscapeViewBox={{
+              //   x: true,
+              //   y: true,
+              // }}
+              // offset={20}
+              // cursor={{
+              //   stroke: "black",
+              //   // stroke: "400px",
+              //   strokeWidth: "50%",
+              //   strokeOpacity: 0.3,
+              //   style: {
+              //     position: "absolute",
+              //     height: "200%",
+              //     left: "50%",
+              //   },
+              // }}
+              active={false}
+              cursor={false}
+              tick={{
+                fill: "#FFF",
+                fontFamily: "Roboto",
+                fontSize: "12px",
+                opacity: "0.6",
+              }}
+            />
             <XAxis
               dataKey="day"
               axisLine={false}
@@ -120,8 +165,16 @@ function CurveChart(props) {
               stroke="url(#gradientAreaStroke)"
               fillOpacity={0}
               strokeWidth={2}
+              activeDot={{
+                stroke: "hsla(0,100%,100%, 0.3)",
+                strokeWidth: 4,
+                r: 3,
+                fill: "white",
+                style: { boxShadow: "16px 16px black" },
+              }}
+              // activeDot={customActiveDot}
             />
-            <ReferenceArea x1={data.maxDay} x2={7} />
+            {/* <ReferenceArea x1={data.maxDay} x2={7} /> */}
           </AreaChart>
         </ResponsiveContainer>
       )}
