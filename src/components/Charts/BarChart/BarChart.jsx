@@ -9,9 +9,9 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import ActivityFactory from "../../Factories/ActivityFactory";
-import { useFetch } from "../../utils/hooks";
-import Loader from "./Loader";
+import ActivityFactory from "../../../Factories/ActivityFactory";
+import { useFetch } from "../../../utils/hooks";
+import Loader from "../../Loader/Loader";
 
 function ChartBar(props) {
   const activityUrl = props.url + "/activity";
@@ -71,8 +71,6 @@ function ChartBar(props) {
 
   // change the color in the text of the legend
   const renderColorfulLegendText = (value) => {
-    // const { color } = entry;
-
     return <span style={{ color: "#74798c" }}>{value}</span>;
   };
 
@@ -103,7 +101,6 @@ function ChartBar(props) {
 
             <XAxis
               dataKey="index"
-              // type="number"
               interval={0}
               stroke="#DEDEDE"
               tick={{ fill: "#9B9EAC", fontSize: "14px" }}
@@ -114,7 +111,6 @@ function ChartBar(props) {
               orientation="left"
               stroke="#82ca9d"
               hide="true"
-              // domain={["dataMin - 1", "dataMax"]}
             />
             <YAxis
               yAxisId="right"

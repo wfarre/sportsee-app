@@ -7,12 +7,11 @@ import {
   ResponsiveContainer,
   Rectangle,
 } from "recharts";
-import { useFetch } from "../../utils/hooks";
+import { useFetch } from "../../../utils/hooks";
 
 // import loader component
-import Loader from "./Loader";
-
-import AverageSessionsFactory from "../../Factories/AverageSessionsFactory";
+import Loader from "../../Loader/Loader";
+import AverageSessionsFactory from "../../../Factories/AverageSessionsFactory";
 
 function CurveChart(props) {
   const activityUrl = props.url + "/average-sessions";
@@ -60,13 +59,16 @@ function CurveChart(props) {
     return null;
   }
 
+  /* This function allows to create a customized cursor with Recharts.
+  In the graph, when the user hover the dot, a black rectangle will cover the 
+  rest of the graph (from the hovered dot).
+  */
   const CustomCursor = (props) => {
     const { points } = props;
     const { x, y } = points[0];
     return (
       <Rectangle
         fill="#000000"
-        // stroke="red"
         x={x}
         y={y}
         width={500}
@@ -91,7 +93,7 @@ function CurveChart(props) {
       ) : (
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
-            margin={{ right: 18, left: 18 }}
+            margin={{ right: 0, left: 5 }}
             width={500}
             height={100}
             data={data.sessions}

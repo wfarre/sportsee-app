@@ -1,27 +1,35 @@
-import { ReactComponent as CaloryIcon } from "../assets/icons/calory-icon.svg";
-import { ReactComponent as LipidIcon } from "../assets/icons/lipid-icon.svg";
-import { ReactComponent as ProteinIcon } from "../assets/icons/protein-icon.svg";
-import { ReactComponent as CarbIcon } from "../assets/icons/carb-icon.svg";
+import { ReactComponent as CaloryIcon } from "./icons/calory-icon.svg";
+import { ReactComponent as LipidIcon } from "./icons/lipid-icon.svg";
+import { ReactComponent as ProteinIcon } from "./icons/protein-icon.svg";
+import { ReactComponent as CarbIcon } from "./icons/carb-icon.svg";
 import PropTypes from "prop-types";
 
-import ChartBar from "./Charts/BarChart";
-import CurveChart from "./Charts/CurveChart";
-import ChartRadar from "./Charts/ChartRadar";
-import ChartRoundedBar from "./Charts/RoundBarChart";
+import ChartBar from "../Charts/BarChart/BarChart";
+import CurveChart from "../Charts/CurveChart/CurveChart";
+import ChartRadar from "../Charts/ChartRadar/ChartRadar";
+import formateNumber from "../../utils/formateDate";
+import RoundedBar from "../Charts/RoundedBar/RoundedBar";
 
-function SectionStats(props) {
+function SectionStats({ url, score, calory, protein, lipid, carb }) {
+  /* use the destructuration to format all the numbers */
+  // const [calory, protein, lipid, carbohydrate] = [
+  //   formateNumber(props.calory),
+  //   formateNumber(props.protein),
+  //   formateNumber(props.lipid),
+  //   formateNumber(props.carb),
+  // ];
+
   return (
     <section className="section section--stats">
       <div className="container">
         <div className="container__graph">
           <div className="container__graph__main">
-            <ChartBar url={props.url} />
+            <ChartBar url={url} />
           </div>
           <div className="container__graph__extra">
-            <CurveChart url={props.url} />
-            <ChartRadar url={props.url} />
-
-            <ChartRoundedBar score={props.score} />
+            <CurveChart url={url} />
+            <ChartRadar url={url} />
+            <RoundedBar score={score} />
           </div>
         </div>
 
@@ -32,7 +40,7 @@ function SectionStats(props) {
             </div>
             <div className="container__stats__item__data">
               <h2 className="container__stats__item__data__figure">
-                {props.calory} kcal
+                {formateNumber(calory)} kcal
               </h2>
               <p className="container__stats__item__data__label">Calories</p>
             </div>
@@ -44,7 +52,7 @@ function SectionStats(props) {
             </div>
             <div className="container__stats__item__data">
               <h2 className="container__stats__item__data__figure">
-                {props.protein} g
+                {formateNumber(protein)} g
               </h2>
               <p className="container__stats__item__data__label">Protéines</p>
             </div>
@@ -56,7 +64,7 @@ function SectionStats(props) {
             </div>
             <div className="container__stats__item__data">
               <h2 className="container__stats__item__data__figure">
-                {props.carb} g
+                {formateNumber(carb)} g
               </h2>
               <p className="container__stats__item__data__label">Glucides</p>
             </div>
@@ -68,7 +76,7 @@ function SectionStats(props) {
             </div>
             <div className="container__stats__item__data">
               <h2 className="container__stats__item__data__figure">
-                {props.lipid} g
+                {formateNumber(lipid)} g
               </h2>
               <p className="container__stats__item__data__label">Lipides</p>
             </div>
@@ -83,7 +91,7 @@ SectionStats.propTypes = {
   lipid: PropTypes.number,
   protein: PropTypes.number,
   carbohydrate: PropTypes.number,
-  calory: PropTypes.string,
+  calory: PropTypes.number,
 };
 
 export default SectionStats;

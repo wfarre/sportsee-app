@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 
 function Header(props) {
-  console.log(props.userName);
   return (
     <header className="header">
       <h1 className="header__title">

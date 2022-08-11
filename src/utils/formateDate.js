@@ -1,17 +1,8 @@
+/**
+ * the function format a number to the US format with coma every three figures
+ * @Params number (eg: 1930)
+ * @return string: the number formatted (1,930)
+ **/
 export default function formateNumber(number) {
-  const numberString = number.toString();
-  const numberArray = numberString.split("");
-  let j = 0;
-
-  for (let i = numberArray.length; i >= 0; i--) {
-    if (j === 3 && j !== 0) {
-      numberArray.splice(i, 0, ",");
-      i--;
-      j = 2;
-    } else {
-      j++;
-    }
-  }
-
-  return numberArray.join("");
+  return new Intl.NumberFormat("en-US").format(number);
 }

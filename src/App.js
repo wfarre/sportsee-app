@@ -4,14 +4,12 @@ import { useParams } from "react-router";
 import { useFetch } from "./utils/hooks";
 
 // import my component
-import Navbar from "./components/Navbar";
-import SideNav from "./components/SideNav";
-import Header from "./components/Header";
-import SectionStats from "./components/SectionStats";
+import Navbar from "./components/Navbar/Navbar";
+import SideNav from "./components/SideNav/SideNav";
+import Header from "./components/Header/Header";
+import SectionStats from "./components/SectionStats/SectionStats";
 
 import UserFactory from "./Factories/UserFactory";
-
-import formateNumber from "./utils/formateDate";
 
 function App() {
   const { id } = useParams();
@@ -34,7 +32,7 @@ function App() {
 
           <SectionStats
             url={url}
-            calory={formateNumber(userData.keyData.calorieCount)}
+            calory={userData.keyData.calorieCount}
             protein={userData.keyData.proteinCount}
             lipid={userData.keyData.lipidCount}
             carb={userData.keyData.carbohydrateCount}

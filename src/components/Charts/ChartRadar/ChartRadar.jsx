@@ -7,10 +7,10 @@ import {
   PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
-import PerformanceFactory from "../../Factories/PerformanceFactory";
+import PerformanceFactory from "../../../Factories/PerformanceFactory";
 
-import { useFetch } from "../../utils/hooks.jsx";
-import Loader from "./Loader";
+import { useFetch } from "../../../utils/hooks.jsx";
+import Loader from "../../Loader/Loader";
 
 function ChartRadar(props) {
   const activityUrl = props.url + "/performance";
@@ -31,7 +31,7 @@ function ChartRadar(props) {
           <RadarChart
             cx="50%"
             cy="50%"
-            outerRadius="69%"
+            outerRadius="70%"
             data={data.activityData}
             style={{ backgroundColor: "#282D30" }}
             startAngle={210}
@@ -46,7 +46,7 @@ function ChartRadar(props) {
             {/* make disapear the oblic strokes from the graph */}
             <PolarRadiusAxis tick={false} axisLine={false} />
             <Radar
-              name="Mike"
+              // name="Mike"
               dataKey="value"
               fill="#FF0101"
               fillOpacity={0.6}

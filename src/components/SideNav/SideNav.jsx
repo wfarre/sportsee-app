@@ -1,7 +1,7 @@
-import { ReactComponent as IconYoga } from "../assets/icons/meditate-icon.svg";
-import { ReactComponent as IconSwim } from "../assets/icons/swim-icon.svg";
-import { ReactComponent as IconCycle } from "../assets/icons/cycle-icon.svg";
-import { ReactComponent as IconDumbell } from "../assets/icons/dumbell-icon.svg";
+import { ReactComponent as IconYoga } from "./icons/meditate-icon.svg";
+import { ReactComponent as IconSwim } from "./icons/swim-icon.svg";
+import { ReactComponent as IconCycle } from "./icons/cycle-icon.svg";
+import { ReactComponent as IconDumbell } from "./icons/dumbell-icon.svg";
 
 function SideNav() {
   return (
