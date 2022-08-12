@@ -8,9 +8,9 @@ node v14.16.0
 
 The technologies used are :
 
-- React
-- Sass
-- Recharts for the graphics
+- React v18.1.0
+- Sass v1.52.1
+- Recharts v2.1.10 for the graphics
 
 ## Install your environment
 

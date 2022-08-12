@@ -13,7 +13,7 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/user/:id" element={<App />} />
-      <Route path="//user/:id/activity" element={<Activity />} />
+      <Route path="/user/:id/activity" element={<Activity />} />
       <Route path="/user/:id/average-sessions" element={<AverageSessions />} />
       <Route path="/user/:id/today-score" element={<TodayScore />} />
       <Route path="/user/:id/activities" element={<Activities />} />

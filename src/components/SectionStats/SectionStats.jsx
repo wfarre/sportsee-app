@@ -11,14 +11,6 @@ import formateNumber from "../../utils/formateDate";
 import RoundedBar from "../Charts/RoundedBar/RoundedBar";
 
 function SectionStats({ url, score, calory, protein, lipid, carb }) {
-  /* use the destructuration to format all the numbers */
-  // const [calory, protein, lipid, carbohydrate] = [
-  //   formateNumber(props.calory),
-  //   formateNumber(props.protein),
-  //   formateNumber(props.lipid),
-  //   formateNumber(props.carb),
-  // ];
-
   return (
     <section className="section section--stats">
       <div className="container">
