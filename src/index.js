@@ -7,12 +7,14 @@ import AverageSessions from "./Routes/AverageSessions";
 import Activities from "./Routes/Activities";
 import TodayScore from "./Routes/TodayScore";
 import KeyData from "./Routes/KeyData";
+import UserInfos from "./Routes/UserInfos";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/user/:id" element={<App />} />
+      <Route path="/user/dashboard" element={<App />} />
+      <Route path="/user/:id" element={<UserInfos />} />
       <Route path="/user/:id/activity" element={<Activity />} />
       <Route path="/user/:id/average-sessions" element={<AverageSessions />} />
       <Route path="/user/:id/today-score" element={<TodayScore />} />

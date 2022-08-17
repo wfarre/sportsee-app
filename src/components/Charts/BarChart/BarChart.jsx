@@ -71,7 +71,17 @@ function ChartBar(props) {
 
   // change the color in the text of the legend
   const renderColorfulLegendText = (value) => {
-    return <span style={{ color: "#74798c" }}>{value}</span>;
+    return (
+      <span
+        className="legend-text"
+        style={{
+          color: "#74798c",
+          paddingLeft: "5px",
+        }}
+      >
+        {value}
+      </span>
+    );
   };
 
   return (
@@ -130,12 +140,16 @@ function ChartBar(props) {
               fontSize="14px"
               wrapperStyle={{
                 position: "absolute",
+                display: "flex",
+                justifyContent: "flex-end",
+                // width: "271px",
                 top: "24px",
                 right: "26px",
                 fontSize: "14px",
-                fontWeight: "500",
+                fontWeight: "400",
               }}
               formatter={renderColorfulLegendText}
+              // content={renderLegend}
             />
             <Bar
               yAxisId="right"

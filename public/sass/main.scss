@@ -61,3 +61,14 @@ body {
     }
   }
 }
+
+.recharts-default-legend {
+  display: flex;
+  justify-content: space-between;
+  width: 271px;
+}
+
+.recharts-legend-item {
+  display: flex !important;
+  align-items: center;
+}
