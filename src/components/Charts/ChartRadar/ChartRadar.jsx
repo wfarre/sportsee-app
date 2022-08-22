@@ -45,12 +45,7 @@ function ChartRadar(props) {
             />
             {/* make disapear the oblic strokes from the graph */}
             <PolarRadiusAxis tick={false} axisLine={false} />
-            <Radar
-              // name="Mike"
-              dataKey="value"
-              fill="#FF0101"
-              fillOpacity={0.6}
-            />
+            <Radar dataKey="value" fill="#FF0101" fillOpacity={0.6} />
           </RadarChart>
         </ResponsiveContainer>
       )}

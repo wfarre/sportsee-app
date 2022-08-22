@@ -59,10 +59,13 @@ function CurveChart(props) {
     return null;
   }
 
-  /* This function allows to create a customized cursor with Recharts.
-  In the graph, when the user hover the dot, a black rectangle will cover the 
-  rest of the graph (from the hovered dot).
-  */
+  /**
+   * This function allows to create a customized cursor with Recharts.
+   * In the graph, when the user hover the dot, a black rectangle will cover the
+   * rest of the graph (from the hovered dot).
+   * @params props
+   * @return a Rectangle components
+   **/
   const CustomCursor = (props) => {
     const { points } = props;
     const { x, y } = points[0];
@@ -102,6 +105,7 @@ function CurveChart(props) {
             }}
           >
             <defs>
+              {/* To make the linear-gradient opacity on the curve  */}
               <linearGradient
                 id="gradientAreaStroke"
                 x1="0"

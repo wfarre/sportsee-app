@@ -142,14 +142,12 @@ function ChartBar(props) {
                 position: "absolute",
                 display: "flex",
                 justifyContent: "flex-end",
-                // width: "271px",
                 top: "24px",
                 right: "26px",
                 fontSize: "14px",
                 fontWeight: "400",
               }}
               formatter={renderColorfulLegendText}
-              // content={renderLegend}
             />
             <Bar
               yAxisId="right"

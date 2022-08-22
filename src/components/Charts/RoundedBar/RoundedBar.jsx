@@ -33,7 +33,6 @@ const RoundedBar = (props) => {
         >
           <RadialBar
             minAngle={15}
-            // label={{ position: "insideStart", fill: "#fff" }}
             background={{ fill: "#FFFFFF" }}
             clockWise
             dataKey="score"
