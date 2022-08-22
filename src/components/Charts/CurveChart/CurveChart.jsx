@@ -25,6 +25,8 @@ function CurveChart(props) {
 
   /**
    * This function is made to custom the tooltip inside the chart
+   * @params payload, label, active
+   * @return customized tooltip components
    */
   function CustomTooltip({ payload, label, active }) {
     if (active) {

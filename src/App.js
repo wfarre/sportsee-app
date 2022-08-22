@@ -12,7 +12,7 @@ import SectionStats from "./components/SectionStats/SectionStats";
 import UserFactory from "./Factories/UserFactory";
 
 function App() {
-  const userId = 18;
+  const userId = 12;
   const url = "http://localhost:5000/user/" + userId;
 
   const [userData, isLoaded, error] = useFetch(url, UserFactory, "user");

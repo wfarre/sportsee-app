@@ -157,7 +157,6 @@ function ChartBar(props) {
                 fontWeight: "400",
               }}
               formatter={renderColorfulLegendText}
-              // content={renderLegend}
             />
             <Bar
               yAxisId="right"
