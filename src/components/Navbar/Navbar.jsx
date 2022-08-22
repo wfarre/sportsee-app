@@ -1,4 +1,5 @@
 import { ReactComponent as Logo } from "./logo.svg";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -9,16 +10,16 @@ function Navbar() {
 
       <li className="navbar">
         <ul className="navbar__item">
-          <a href="#">Accueil</a>
+          <Link to="/user/dashboard">Accueil</Link>
         </ul>
         <ul className="navbar__item">
-          <a href="#">Profil</a>
+          <Link to="/user/12">Profil</Link>
         </ul>
         <ul className="navbar__item">
-          <a href="#">Réglages</a>
+          <Link to="/user/dashboard">Réglages</Link>
         </ul>
         <ul className="navbar__item">
-          <a href="#">Communauté</a>
+          <Link to="/user/dashboard">Communauté</Link>
         </ul>
       </li>
     </nav>

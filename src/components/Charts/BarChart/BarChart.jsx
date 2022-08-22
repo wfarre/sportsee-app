@@ -10,7 +10,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import ActivityFactory from "../../../Factories/ActivityFactory";
-import { useFetch } from "../../../utils/hooks";
+import { useFetch } from "../../../utils/customHooks";
 import Loader from "../../Loader/Loader";
 
 function ChartBar(props) {
@@ -25,6 +25,8 @@ function ChartBar(props) {
 
   /**
    * This function is made to custom the tooltip inside the chart
+   * @params payload, label, active
+   * @return customized tooltip components
    */
   function CustomTooltip({ payload, label, active }) {
     if (active) {
@@ -69,7 +71,11 @@ function ChartBar(props) {
     return null;
   }
 
-  // change the color in the text of the legend
+  /**
+   * Change the color in the legend
+   * @params value
+   * @return component corresponding the text in the legend
+   */
   const renderColorfulLegendText = (value) => {
     return (
       <span
@@ -83,6 +89,8 @@ function ChartBar(props) {
       </span>
     );
   };
+
+  if (error) console.error(error.message);
 
   return (
     <div className=" extra-chart bar-chart">

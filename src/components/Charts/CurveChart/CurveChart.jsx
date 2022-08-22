@@ -7,7 +7,7 @@ import {
   ResponsiveContainer,
   Rectangle,
 } from "recharts";
-import { useFetch } from "../../../utils/hooks";
+import { useFetch } from "../../../utils/customHooks";
 
 // import loader component
 import Loader from "../../Loader/Loader";
@@ -59,10 +59,12 @@ function CurveChart(props) {
     return null;
   }
 
-  /* This function allows to create a customized cursor with Recharts.
-  In the graph, when the user hover the dot, a black rectangle will cover the 
-  rest of the graph (from the hovered dot).
-  */
+  /**This function allows to create a customized cursor with Recharts.
+   * In the graph, when the user hover the dot, a black rectangle will cover the
+   * rest of the graph (from the hovered dot).
+   * @params props
+   * @return Reactangle component
+   * */
   const CustomCursor = (props) => {
     const { points } = props;
     const { x, y } = points[0];
@@ -81,6 +83,8 @@ function CurveChart(props) {
   //we set the day with the highest activity
   const off = Math.floor((data.maxDay / 7) * 100);
   const bColor = "#FFF";
+
+  if (error) console.error(error.message);
 
   return (
     <div className="extra-chart extra-chart--curve">

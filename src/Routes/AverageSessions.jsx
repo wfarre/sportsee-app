@@ -1,6 +1,6 @@
 import AverageSessionsFactory from "../Factories/AverageSessionsFactory";
 
-import { useFetch } from "../utils/hooks";
+import { useFetch } from "../utils/customHooks";
 import { useParams } from "react-router";
 
 function AverageSessions() {

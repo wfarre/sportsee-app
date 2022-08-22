@@ -9,7 +9,7 @@ import {
 } from "recharts";
 import PerformanceFactory from "../../../Factories/PerformanceFactory";
 
-import { useFetch } from "../../../utils/hooks.jsx";
+import { useFetch } from "../../../utils/customHooks.jsx";
 import Loader from "../../Loader/Loader";
 
 function ChartRadar(props) {
@@ -21,6 +21,8 @@ function ChartRadar(props) {
     PerformanceFactory,
     "api"
   );
+
+  if (error) console.error(error.message);
 
   return (
     <div className="extra-chart extra-chart--radar">
@@ -45,12 +47,7 @@ function ChartRadar(props) {
             />
             {/* make disapear the oblic strokes from the graph */}
             <PolarRadiusAxis tick={false} axisLine={false} />
-            <Radar
-              // name="Mike"
-              dataKey="value"
-              fill="#FF0101"
-              fillOpacity={0.6}
-            />
+            <Radar dataKey="value" fill="#FF0101" fillOpacity={0.6} />
           </RadarChart>
         </ResponsiveContainer>
       )}

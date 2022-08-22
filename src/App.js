@@ -1,7 +1,7 @@
 import "./styles/App.css";
 
-import { useParams } from "react-router";
-import { useFetch } from "./utils/hooks";
+import { useFetch } from "./utils/customHooks";
+import Loader from "./components/Loader/Loader";
 
 // import my component
 import Navbar from "./components/Navbar/Navbar";
@@ -12,8 +12,6 @@ import SectionStats from "./components/SectionStats/SectionStats";
 import UserFactory from "./Factories/UserFactory";
 
 function App() {
-  // const { id } = useParams();
-  // const userId = { id }.id;
   const userId = 18;
   const url = "http://localhost:5000/user/" + userId;
 
@@ -22,7 +20,7 @@ function App() {
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <Loader />;
   } else {
     return (
       <div className="App">

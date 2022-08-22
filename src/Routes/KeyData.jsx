@@ -1,5 +1,5 @@
 import UserFactory from "../Factories/UserFactory";
-import { useFetch } from "../utils/hooks";
+import { useFetch } from "../utils/customHooks";
 import { useParams } from "react-router";
 
 function KeyData() {
